@@ -1,0 +1,3 @@
+[submodule "roles/cns.provisioning-sg"]
+	path = roles/cns.provisioning-sg
+	url = https://github.com/cnstechnicalgroup/role-provisioning-sg.git
