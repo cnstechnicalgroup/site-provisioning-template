@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - cns.provisioning-sg
+  tasks:
