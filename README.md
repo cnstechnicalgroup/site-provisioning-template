@@ -46,5 +46,13 @@ Examples
 ```yaml
 # Include this in the management_vpc playbook.
 
-- include: site-name/site.yml vpc: vpc, mode: 'dev', mgmt_subnet_name: 'management-subnet-001', prefix: 'theworldcom', domain: 'the-world.com', subdomain: 'dev', ssl_certificate_id: 'arn:aws:iam::012345678901:server-certificate/scert'
+- include: >
+    site-name/site.yml
+    vpc=vpc
+    mode='dev'
+    mgmt_subnet_name='management-subnet-001'
+    prefix='theworldcom'
+    domain='the-world.com'
+    subdomain='dev'
+    ssl_certificate_id='arn:aws:iam::012345678901:server-certificate/scert'
 ```
