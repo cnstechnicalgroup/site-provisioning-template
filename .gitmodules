@@ -4,3 +4,6 @@
 [submodule "roles/cns.vpc-info"]
 	path = roles/cns.vpc-info
 	url = https://github.com/cnstechnicalgroup/role-vpc-info.git
+[submodule "roles/cns.dns"]
+	path = roles/cns.dns
+	url = https://github.com/cnstechnicalgroup/role-dns.git

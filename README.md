@@ -23,6 +23,7 @@ In the current version, you can specify the following variables:
 | domain                |   ---   | Primary site domain name. e.g. the-world.com.                                 |
 | subdomain             |   ---   | Special environment subdomains for dev, test, and stage.                      |
 | ssl_certificate_id    |   ---   | AWS IAM SSL Certificate ID.                                                   |
+| dns                   |   ---   | Object variable containing Route 53 zone information. See [cns.dns].          |
 
 Dependencies
 ------------
@@ -58,3 +59,4 @@ Examples
 ```
 
 [cns.vpc-info]: https://github.com/cnstechnicalgroup/role-vpc-info
+[cns.dns]: https://github.com/cnstechnicalgroup/role-dns

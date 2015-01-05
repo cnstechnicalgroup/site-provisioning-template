@@ -28,3 +28,4 @@
         domain: 'the-world.com',
         subdomain: 'www',
         mode: 'prod' }
+    - cns.dns
