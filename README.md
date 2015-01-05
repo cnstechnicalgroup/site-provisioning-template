@@ -16,7 +16,7 @@ In the current version, you can specify the following variables:
 
 | Name                  | Default |                                                                               |
 |-----------------------|---------|-------------------------------------------------------------------------------|
-| vpc                   |   ---   | Object containint entire VPC structure. Passed from management_vpc playbook.  |
+| vpc                   |   ---   | Object containint entire VPC structure. Registered by [cns.vpc-info] role.    |
 | mode                  |   ---   | Target build environment (dev, test, stage, prod.                             |
 | mgmt_subnet_name      |   ---   | Name of the management subnet for the target VPC.                             |
 | prefix                |   ---   | Short name for site. e.g. the-world.com becomes theworldcom.                  |
@@ -56,3 +56,5 @@ Examples
     subdomain='dev'
     ssl_certificate_id='arn:aws:iam::012345678901:server-certificate/scert'
 ```
+
+[cns.vpc-info]: https://github.com/cnstechnicalgroup/role-vpc-info
