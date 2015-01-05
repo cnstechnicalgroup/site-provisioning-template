@@ -4,6 +4,8 @@
   vars_files:
     # Target VPC identifiers (keep out of public repos)
     - ../../vars/vpc_details.yml
+    # Region specific Security Group identifiers
+    - ../../vars/global_sg_details.yml
   roles:
     - cns.vpc-info
     - { role: cns.provisioning-sg,
