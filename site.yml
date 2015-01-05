@@ -1,6 +1,28 @@
 ---
 - hosts: localhost
   connection: local
+  vars_files:
+    # Target VPC identifiers (keep out of public repos)
+    - ../../vars/vpc_details.yml
   roles:
-    - cns.provisioning-sg
-  tasks:
+    - cns.vpc-info
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'dev001',
+        mode: 'dev' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'test001',
+        mode: 'test' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'stage001',
+        mode: 'stage' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'www',
+        mode: 'prod' }
