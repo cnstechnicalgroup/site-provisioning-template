@@ -16,7 +16,7 @@ In the current version, you can specify the following variables:
 
 | Name                  | Default |                                                                               |
 |-----------------------|---------|-------------------------------------------------------------------------------|
-| vpc                   |   ---   | Object containint entire VPC structure. Registered by [cns.vpc-info] role.    |
+| vpc                   |   ---   | Object containing entire VPC structure. Registered by [cns.vpc-info] role.    |
 | mode                  |   ---   | Target build environment (dev, test, stage, prod.                             |
 | mgmt_subnet_name      |   ---   | Name of the management subnet for the target VPC.                             |
 | prefix                |   ---   | Short name for site. e.g. the-world.com becomes theworldcom.                  |
