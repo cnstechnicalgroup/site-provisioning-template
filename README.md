@@ -45,17 +45,37 @@ Examples
 --------
 
 ```yaml
-# Include this in the management_vpc playbook.
-
-- include: >
-    site-name/site.yml
-    vpc=vpc
-    mode='dev'
-    mgmt_subnet_name='management-subnet-001'
-    prefix='theworldcom'
-    domain='the-world.com'
-    subdomain='dev'
-    ssl_certificate_id='arn:aws:iam::012345678901:server-certificate/scert'
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+    # Target VPC identifiers (keep out of public repos)
+    - ../../vars/vpc_details.yml
+    # Region specific Security Group identifiers
+    - ../../vars/global_sg_details.yml
+  roles:
+    - cns.vpc-info
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'dev001',
+        mode: 'dev' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'test001',
+        mode: 'test' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'stage001',
+        mode: 'stage' }
+    - { role: cns.provisioning-sg,
+        prefix: 'theworldcom',
+        domain: 'the-world.com',
+        subdomain: 'www',
+        mode: 'prod' }
+    - cns.dns
 ```
 
 [cns.vpc-info]: https://github.com/cnstechnicalgroup/role-vpc-info
